@@ -43,3 +43,4 @@ Follow these steps to set up and run the Spring security Learner Microservice:
 1. initial commit
 2. added test hello endpoint
 3. made yml configurations for h2 database
+4. added required database schemas using schema.sql
