@@ -36,7 +36,7 @@ Follow these steps to set up and run the Spring security Learner Microservice:
    java -jar target/yugibank-accounts.jar
 
 ## API Endpoints
-
+`POST /api/create`: Create a new customer.
 
 ## Commit History
 - Branch: start
@@ -46,3 +46,4 @@ Follow these steps to set up and run the Spring security Learner Microservice:
 4. added required database schemas using schema.sql
 5. added repositories and entities for accounts and customers
 6. added dto classes
+7. added post endpoint for creating a customer
