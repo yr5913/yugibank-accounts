@@ -55,3 +55,4 @@ Follow these steps to set up and run the Spring security Learner Microservice:
 13. added openapi spec swagger dependency
 14. added service level customization for swagger ui
 15. added additional information for swagger ui regarding the controller and endpoints using @Tag, @Operation and @ApiResponse annotations
+16. enhanced documentation using @Schema to denote the description of fields and example values for fields
