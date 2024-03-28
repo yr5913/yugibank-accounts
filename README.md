@@ -47,3 +47,4 @@ Follow these steps to set up and run the Spring security Learner Microservice:
 5. added repositories and entities for accounts and customers
 6. added dto classes
 7. added post endpoint for creating a customer
+8. added get endpoint for getting customer details and put method to update the account and customer details

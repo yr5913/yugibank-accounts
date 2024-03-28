@@ -4,6 +4,7 @@ import com.yugibank.accounts.constants.AccountConstants;
 import com.yugibank.accounts.dto.CustomerDTO;
 import com.yugibank.accounts.dto.ResponseDTO;
 import com.yugibank.accounts.service.IAccountsService;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -29,6 +30,29 @@ public class AccountsController {
         return ResponseEntity
                 .status(HttpStatus.CREATED)
                 .body(new ResponseDTO(AccountConstants.STATUS_201, AccountConstants.MESSAGE_201));
+    }
+
+
+    @GetMapping("/fetch")
+    public ResponseEntity<CustomerDTO> fetchAccountDetails(@RequestParam String mobileNumber) {
+        CustomerDTO customerDTO = iAccountsService.fetchAccount(mobileNumber);
+
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(customerDTO);
+    }
+
+    @PutMapping("/update")
+    public ResponseEntity<ResponseDTO> updateAccountDetails(@Valid @RequestBody CustomerDTO customerDTO) {
+        boolean isUpdated = iAccountsService.updateAccount(customerDTO);
+        if (isUpdated) {
+            return ResponseEntity
+                    .status(HttpStatus.OK)
+                    .body(new ResponseDTO(AccountConstants.STATUS_200, AccountConstants.MESSAGE_200));
+        } else {
+            return ResponseEntity
+                    .status(HttpStatus.EXPECTATION_FAILED)
+                    .body(new ResponseDTO(AccountConstants.STATUS_417, AccountConstants.MESSAGE_417_UPDATE));
+        }
     }
 
 }
