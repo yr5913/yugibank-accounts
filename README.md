@@ -53,3 +53,4 @@ Follow these steps to set up and run the Spring security Learner Microservice:
 11. added validations and global exception handler for the validations
 12. added audit configurations to enable jpa auditing
 13. added openapi spec swagger dependency
+14. added service level customization for swagger ui
